@@ -1,0 +1,26 @@
+include:
+  - project: 'Bigouden/gitlab-ci-templates'
+    file: '.gitlab-ci-docker.yml'
+
+.standalone:
+  image:
+    name: $CONTAINER_TEST_IMAGE
+    entrypoint: ['']
+  variables:
+    GIT_STRATEGY: none
+  dependencies: []
+    
+stages:
+  - Quality
+  - Security
+  - Build
+  - Test
+  - Inspect
+  - Release
+  - Clean
+
+Syft CLI:
+  stage: Test
+  extends: .standalone
+  script:
+    - 'syft version'
