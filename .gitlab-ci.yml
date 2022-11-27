@@ -19,7 +19,7 @@ stages:
   - Release
   - Clean
 
-Syft:
+Syft CLI:
   stage: Test
   extends: .standalone
   script:
