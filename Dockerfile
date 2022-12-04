@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.17
 LABEL maintainer="Thomas GUIRRIEC <thomas@guirriec.frr>"
 COPY apk_packages /
 ENV USERNAME='syft'
